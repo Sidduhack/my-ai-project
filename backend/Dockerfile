@@ -1,4 +1,4 @@
-# Dockerfile for Render deployment
+# Dockerfile for Railway/Render deployment
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -23,18 +23,18 @@ RUN useradd --create-home --shell /bin/bash app \
     && chown -R app:app /app
 USER app
 
-# Expose port
+# Expose port (Railway sets PORT env var)
 EXPOSE 8000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import httpx; httpx.get('http://localhost:8000/system/health/live', timeout=5)"
+    CMD python -c "import httpx; httpx.get('http://localhost:${PORT:-8000}/system/health/live', timeout=5)"
 
-# Run with gunicorn for production
-CMD ["gunicorn", "nvidia_multi_agent_builder.api.main:create_app", \
-     "--worker-class", "uvicorn.workers.UvicornWorker", \
-     "--workers", "2", \
-     "--bind", "0.0.0.0:8000", \
-     "--timeout", "120", \
-     "--access-logfile", "-", \
-     "--error-logfile", "-"]
+# Run with gunicorn for production (PORT set by Railway)
+CMD gunicorn nvidia_multi_agent_builder.api.main:create_app \
+    --worker-class uvicorn.workers.UvicornWorker \
+    --workers 2 \
+    --bind 0.0.0.0:${PORT:-8000} \
+    --timeout 120 \
+    --access-logfile - \
+    --error-logfile -

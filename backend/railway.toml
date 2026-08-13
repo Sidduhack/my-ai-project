@@ -1,0 +1,19 @@
+# Railway configuration
+[build]
+builder = "docker"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/system/health/live"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[services.web]
+name = "nvidia-multi-agent-api"
+startCommand = "gunicorn nvidia_multi_agent_builder.api.main:create_app --worker-class uvicorn.workers.UvicornWorker --workers 2 --bind 0.0.0.0:$PORT --timeout 120 --access-logfile - --error-logfile -"
+healthcheckPath = "/system/health/live"
+
+[services.worker]
+name = "nvidia-multi-agent-worker"
+startCommand = "python -m nvidia_multi_agent_builder.worker"
