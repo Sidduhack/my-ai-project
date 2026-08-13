@@ -1,0 +1,283 @@
+# Model Registry Configuration
+# Primary/fallback routes per agent
+
+agents:
+  planner:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.3
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.3
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.3
+  
+  architect:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  ui_ux:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.4
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.4
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.4
+
+  creative_director:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.5
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.5
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.5
+
+  motion_designer:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.3
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.3
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.3
+
+  frontend:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  backend:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  database:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  security:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.1
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.1
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.1
+
+  performance:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  testing:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  integration:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.2
+
+  debugging:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.1
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.1
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.1
+
+  sound_engineer:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.3
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.3
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.3
+
+  accessibility:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.2
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.2
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.2
+
+  seo:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.3
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.3
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.3
+
+  documentation:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.3
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.3
+      - provider: "local"
+        model: "llama-3.1-70b-instruct"
+        temperature: 0.3
+
+  code_reviewer:
+    primary:
+      provider: "nvidia"
+      model: "nvidia/nemotron-3-ultra"
+      temperature: 0.1
+      max_tokens: 8192
+    fallbacks:
+      - provider: "openai_compatible"
+        model: "gpt-4o"
+        temperature: 0.1
+      - provider: "local"
+        model: "codellama-34b-instruct"
+        temperature: 0.1
+
+# Global provider defaults
+providers:
+  nvidia:
+    enabled: true
+    timeout: 60
+    max_retries: 3
+    rate_limit_rpm: 100
+  
+  openai_compatible:
+    enabled: true
+    timeout: 60
+    max_retries: 3
+    rate_limit_rpm: 60
+  
+  local:
+    enabled: true
+    timeout: 120
+    max_retries: 1
+    rate_limit_rpm: 10
+
+# Health check configuration
+health_check:
+  interval_seconds: 30
+  timeout_seconds: 10
+  failure_threshold: 3
+  success_threshold: 2
+  cooldown_seconds: 300
